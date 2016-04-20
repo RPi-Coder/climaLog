@@ -1,18 +1,18 @@
 // +--------------+-------------------------------------------------------------
-// ! Projectname: ! climaLog2000 - Clima Log 2000
-// ! Modulename:  ! Main Program from ClimaLog 2000
+// ! Projectname: ! climaLog2000 - Clima Log 
+// ! Modulename:  ! Main Program from ClimaLog 
 // ! Filename:    ! Cl2000.c
-// ! Dependent:   ! wiringPi and all CL2000 Modules
+// ! Dependent:   ! wiringPi and all Clima Log  Modules
 // +--------------+-------------------------------------------------------------
-// ! Description: ! Main Program for ClimaLog 2000
+// ! Description: ! Main Program for ClimaLog
 // !              ! Copyright (C) 1995-2016 by RPi-Coder.
 // !              !
 // +--------------+-------------------------------------------------------------
-// ! Disclaimer:  ! This file is part of Clima Log 2000 - climaLog2000:
-// !              ! https://github.com/RPi-Coder/climaLog2000
+// ! Disclaimer:  ! This file is part of Clima Log - climaLog:
+// !              ! https://github.com/RPi-Coder/climaLog
 // !              ! 
-// !              ! To clone: $ git clone https://github.com/RPi-Coder/climaLog2000.git 
-// !              ! or:       $ git pull https://github.com/RPi-Coder/climaLog2000.git
+// !              ! To clone: $ git clone https://github.com/RPi-Coder/climaLog.git 
+// !              ! or:       $ git pull https://github.com/RPi-Coder/climaLog.git
 // !              !
 // !              ! climaLog2000 is free software: you can redistribute it and/or modify
 // !              ! it under the terms of the GNU Lesser General Public License as
@@ -38,6 +38,7 @@
 // ! 2016-04-16   ! RPi-Coder !  1.1.4   ! Closed  ! Geiger Counter added
 // ! 2016-04-17   ! RPi-Coder !  1.1.5   ! Closed  ! ClFileH Added
 // ! 2016-04-18   ! RPi-Coder !  1.1.6   ! Closed  ! 
+// ! 2016-04-20   ! RPi-Coder !  1.2.1   ! Open    ! 
 // +--------------+-----------+----------+---------+---------------------------------
 //
 
@@ -56,9 +57,9 @@
 // #include "ClFileH.h"
 
 
-int Init_Cl2000 (void);
-int Run_Cl2000  (void);
-int Exit_Cl2000 (void);
+int Init_climaLog (void);
+int Run_climaLog  (void);
+int Exit_climaLog (void);
 
 
 int main (int argc, char *argv[])
@@ -101,9 +102,11 @@ int main (int argc, char *argv[])
 //  Run_Cl2000 ();
 //  Exit_Cl2000 ();
   
+  printf ("climaLog  v1.2.1 running ...\n");
+  
   ClMeters_InitModule (LogMins);
   
-  printf ("\nRunning ClimaLog 2000 v1.1.5.\n");
+  // printf ("\nRunning ClimaLog 2000 v1.1.5.\n");
   
   float 	Volt 		= 0.0;
   float 	Temp 		= 0.0;
@@ -180,7 +183,7 @@ int main (int argc, char *argv[])
   
 }
     
-int Init_Cl2000 (void)
+int Init_climaLog (void)
 {
   ClMeters_InitModule (10);
   
@@ -194,7 +197,7 @@ int Init_Cl2000 (void)
   
 }
 
-int Run_Cl2000  (void)
+int Run_climaLog  (void)
 {
   printf ("Running Cl2000 ...\n");
   delay(1000);
@@ -202,7 +205,7 @@ int Run_Cl2000  (void)
   return 0;
 }
 
-int Exit_Cl2000 (void)
+int Exit_climaLog (void)
 {
   printf ("Exiting Cl2000 ...\n");
   delay(1000);
